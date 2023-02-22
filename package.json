@@ -2,10 +2,10 @@
 	"name": "lm-code-advanced-ts-exercise",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "main.ts",
 	"scripts": {
 		"start-server": "nodemon server/src/main.ts --no-warnings",
-		"start-client": "nodemon client/src/main.mjs --no-warnings",
+		"start-client": "nodemon client/src/main.ts --no-warnings",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
