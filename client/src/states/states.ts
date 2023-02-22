@@ -1,4 +1,4 @@
-export const states = {
+export const STATES = {
 	MENU: "MENU",
 
 	SEND_MESSAGE: "SEND_MESSAGE",
@@ -10,4 +10,5 @@ export const states = {
 	ADD_USER: "ADD_USER",
 
 	UNKNOWN: "UNKNOWN",
-};
+} as const;
+

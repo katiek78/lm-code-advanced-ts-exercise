@@ -1,13 +1,3 @@
-import { states } from "./states";
+import { STATES } from "./states";
 
-export class State {
-	#state = states.MENU;
-
-	get() {
-		return this.#state;
-	}
-
-	set(newState: string) {
-		this.#state = newState;
-	}
-}
+export type State = keyof typeof STATES;
