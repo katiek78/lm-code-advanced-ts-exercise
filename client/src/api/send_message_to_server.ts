@@ -1,4 +1,3 @@
-import { print, prompt } from "../ui/console";
 import { baseUrl } from "./base_url";
 
 export async function sendMessageToServer(message: string) {
@@ -13,9 +12,7 @@ export async function sendMessageToServer(message: string) {
 
 		const json = await result.json();
 
-		const { success } = json;
-
-		return success;
+		return json.success;
 	} catch (e) {
 		console.error(e);
 		return false;
