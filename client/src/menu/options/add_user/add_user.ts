@@ -4,9 +4,8 @@ import { clear, print, prompt } from "../../../ui/console";
 
 export async function addUser() {
 	clear("no");
-	const name: string = await prompt("What is the username? ");
-    //const id: string = "8"; //Need to implement id function
-    const creationDate: string = new Date().toString();
+	const name: string = await prompt("What is the username? ");    
+    const creationDate: string = new Date().toISOString();
 
 	print(`📨 Adding user "${name}"...`);
 
