@@ -1,5 +1,6 @@
 import { fetchAllUsers } from "../../../api/fetch_all_users";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
+import { STATES } from "../../../states/states";
 
 export async function showAllUsers() {
 	clear("yes");
@@ -17,5 +18,5 @@ export async function showAllUsers() {
 	printNewLine();
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
-	return result;
+	return STATES.MENU;
 }
