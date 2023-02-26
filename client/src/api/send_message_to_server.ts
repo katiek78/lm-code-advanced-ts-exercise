@@ -2,7 +2,7 @@ import { baseUrl } from "./base_url";
 
 export async function sendMessageToServer(message: string) {
 	try {
-		const result = await fetch(baseUrl + "/api/send/", {
+		const result: Response = await fetch(baseUrl + "/api/send/", {
 			headers: {
 				"Content-Type": "application/json",
 			},

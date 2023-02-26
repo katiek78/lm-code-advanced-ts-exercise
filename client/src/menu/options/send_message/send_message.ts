@@ -5,7 +5,7 @@ import { clear, print, printNewLine, prompt } from "../../../ui/console";
 export async function sendMessage() {
 	clear("no");
 
-	const message = await prompt("What message shall we send? ");
+	const message: string = await prompt("What message shall we send? ");
 
 	printNewLine();
 	print(`📨 Sending message "${message}"...`);
