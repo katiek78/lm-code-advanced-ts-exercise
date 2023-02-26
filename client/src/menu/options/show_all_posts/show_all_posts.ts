@@ -1,5 +1,6 @@
 import { fetchAllPosts } from "../../../api/fetch_all_posts";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
+import { STATES } from "../../../states/states";
 
 export async function showAllPosts() {
 	clear("yes");
@@ -17,5 +18,5 @@ export async function showAllPosts() {
 	printNewLine();
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
-	return result;
+	return STATES.MENU;
 }
