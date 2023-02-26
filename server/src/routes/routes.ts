@@ -64,6 +64,7 @@ function addAPIRoutes(app: Express) {
 		res.status(200).send({ success: true });
 	});
 
+
 	// now we'll add some routes that let us browse some blog posts
 	console.log("✍️  Adding blog post routes...");
 	apiRouter.get("/posts/all", (req, res) => {
@@ -82,7 +83,15 @@ function addAPIRoutes(app: Express) {
 		res.status(200).send(JSON.stringify(getAllUsers()));
 	});
 
-	// ❗ [1] See README
+	apiRouter.post("/users/add/", (req, res) => {
+		const { body } = req;
+
+		// we don't do anything with the user, but let's echo it back in the console
+		console.log(`👋 Added new user "${body.user.name}"`);
+
+		// reply with a success boolean
+		res.status(200).send({ success: true });
+	});
 
 	apiRouter.get("/users/:id", (req, res) => {
 		res
