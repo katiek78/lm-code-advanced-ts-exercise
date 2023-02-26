@@ -1,5 +1,6 @@
 import { showMenu } from "./menu/menu";
 import { addUser } from "./menu/options/add_user/add_user";
+import { addPost } from "./menu/options/add_post/add_post";
 import { browsePosts } from "./menu/options/browse_posts/browse_posts";
 import { sendMessage } from "./menu/options/send_message/send_message";
 import { showAllPosts } from "./menu/options/show_all_posts/show_all_posts";
@@ -25,6 +26,7 @@ async function main() {
 		SHOW_USERS: showAllUsers,
 		BROWSE_POSTS: browsePosts,
 		ADD_USER: addUser,
+		ADD_POST: addPost,
 		UNKNOWN: handleUnknown,
 	} as const;
 

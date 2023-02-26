@@ -1,4 +1,5 @@
 import { User } from "../types/posts.types";
+import { findNextUnusedID } from "../helpers/helpers";
 
 const USERS = [
 	{
@@ -34,12 +35,3 @@ export function addUser(user: User) {
 	USERS.push(user);
 }
 
-function findNextUnusedID(users: User[]): number {
-	let currentID = 1;
-	let foundUnusedID = false;
-	while (!foundUnusedID) {		
-		if (users.find(user => user.id === currentID.toString()) === undefined) break;
-		currentID++;
-	}
-	return currentID;
-}

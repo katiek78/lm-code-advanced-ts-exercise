@@ -1,6 +1,6 @@
 import * as express from "express";
 import { Express } from "express";
-import { getAllPosts } from "../services/posts_service";
+import { getAllPosts, addPost } from "../services/posts_service";
 import { getAllUsers, addUser } from "../services/users_service";
 
 /*
@@ -76,6 +76,17 @@ function addAPIRoutes(app: Express) {
 		if (post !== undefined)
 			res.status(200).send(JSON.stringify({ postFound: true, ...post }));
 		else res.status(200).send(JSON.stringify({ postFound: false }));
+	});
+
+	apiRouter.post("/posts/add/", (req, res) => {
+		const { body } = req;
+
+		// Add post to array and echo it back in the console
+		addPost(body.post);
+		console.log(`👋 Added new post with title "${body.post.title}"`);
+
+		// reply with a success boolean
+		res.status(200).send({ success: true });
 	});
 
 	console.log("✍️  Adding user routes...");
