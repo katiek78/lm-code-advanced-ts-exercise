@@ -1,7 +1,7 @@
 import * as express from "express";
 import { Express } from "express";
 import { getAllPosts } from "../services/posts_service";
-import { getAllUsers } from "../services/users_service";
+import { getAllUsers, addUser } from "../services/users_service";
 
 /*
 
@@ -86,7 +86,8 @@ function addAPIRoutes(app: Express) {
 	apiRouter.post("/users/add/", (req, res) => {
 		const { body } = req;
 
-		// we don't do anything with the user, but let's echo it back in the console
+		// Add user to array and echo it back in the console
+		addUser(body.user);
 		console.log(`👋 Added new user "${body.user.name}"`);
 
 		// reply with a success boolean
