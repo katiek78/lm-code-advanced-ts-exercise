@@ -5,9 +5,13 @@ import { STATES } from "../../../states/states";
 export async function browsePosts() {
 	clear("nope");
 
-	const desiredPostId: string = await prompt("Enter Post ID");
+	let desiredPostId: string = await prompt("Enter Post ID");
 
-	// TODO: should we validate this?!
+	// Validate Post ID, should be a number
+	while (isNaN(parseInt(desiredPostId)) || parseInt(desiredPostId) < 0) {
+		print(`😣 Please enter a valid number`);
+		desiredPostId = await prompt("Enter Post ID");
+	}
 
 	print(`📨 Fetching post "${desiredPostId}...`);
 
