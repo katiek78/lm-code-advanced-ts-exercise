@@ -109,7 +109,7 @@ function addAPIRoutes(app: Express) {
 		res
 			.status(200)
 			.send(
-				JSON.stringify(getAllUsers().filter((u) => u.id === req.params.id))
+				JSON.stringify(getAllUsers().filter((u) => u.id === req.params.id)[0])
 			);
 	});
 

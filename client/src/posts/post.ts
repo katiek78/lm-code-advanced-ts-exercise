@@ -1,10 +1,8 @@
+import { User } from "../users/user";
+
 export type Post = {
 	id?: string;
 	title: string;
 	text: string;
-	author: {
-		id: string;
-		name: string;
-		creationDate: string;
-	};
+	author: User;
 };
