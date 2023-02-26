@@ -30,5 +30,16 @@ export function getAllUsers(): User[] {
 }
 
 export function addUser(user: User) {
+	user.id = findNextUnusedID(USERS).toString();
 	USERS.push(user);
+}
+
+function findNextUnusedID(users: User[]): number {
+	let currentID = 1;
+	let foundUnusedID = false;
+	while (!foundUnusedID) {		
+		if (users.find(user => user.id === currentID.toString()) === undefined) break;
+		currentID++;
+	}
+	return currentID;
 }

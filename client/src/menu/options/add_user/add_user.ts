@@ -5,12 +5,12 @@ import { clear, print, prompt } from "../../../ui/console";
 export async function addUser() {
 	clear("no");
 	const name: string = await prompt("What is the username? ");
-    const id: string = "8"; //Need to implement id function
+    //const id: string = "8"; //Need to implement id function
     const creationDate: string = new Date().toString();
 
 	print(`📨 Adding user "${name}"...`);
 
-	const success = await sendNewUser({id, name, creationDate});
+	const success = await sendNewUser({name, creationDate});
 
 	if (success === true) print("🥳 User added successfully!");
 	else print("😵 User NOT added.");
