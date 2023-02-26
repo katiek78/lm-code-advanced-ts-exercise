@@ -1,10 +1,11 @@
 import { fetchPost } from "../../../api/fetch_post";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
+import { STATES } from "../../../states/states";
 
 export async function browsePosts() {
 	clear("nope");
 
-	const desiredPostId = await prompt("Enter Post ID");
+	const desiredPostId: string = await prompt("Enter Post ID");
 
 	// TODO: should we validate this?!
 
@@ -19,5 +20,5 @@ export async function browsePosts() {
 	printNewLine();
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
-	return result;
+	return STATES.MENU;
 }
