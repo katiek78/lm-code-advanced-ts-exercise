@@ -25,6 +25,6 @@ const reader = readline.createInterface({
 });
 
 export async function prompt(prompt: string) {
-	const answer = await reader.question(`${prompt}  > `);
+	const answer: string = await reader.question(`${prompt}  > `);
 	return answer;
 }
