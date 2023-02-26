@@ -10,6 +10,7 @@ export async function showMenu(): Promise<State> {
 	print("3. Browse posts", false);
 	print("4. Add user", false);
 	print("5. Add post", false);
+	print("6. Edit user name", false);
 	printNewLine();
 
 	const result: string = await prompt("What shall we do? ");
@@ -20,6 +21,7 @@ export async function showMenu(): Promise<State> {
 	if (result === "3") return STATES.BROWSE_POSTS;
 	if (result === "4") return STATES.ADD_USER;
 	if (result === "5") return STATES.ADD_POST;
+	if (result === "6") return STATES.EDIT_USER_NAME;
 
-	return STATES.UNKNOWN;		
+	return STATES.UNKNOWN;
 }

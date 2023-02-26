@@ -1,6 +1,7 @@
 import { showMenu } from "./menu/menu";
 import { addUser } from "./menu/options/add_user/add_user";
 import { addPost } from "./menu/options/add_post/add_post";
+import { editUserNameOption } from "./menu/options/edit_user/edit_user_name";
 import { browsePosts } from "./menu/options/browse_posts/browse_posts";
 import { sendMessage } from "./menu/options/send_message/send_message";
 import { showAllPosts } from "./menu/options/show_all_posts/show_all_posts";
@@ -27,6 +28,7 @@ async function main() {
 		BROWSE_POSTS: browsePosts,
 		ADD_USER: addUser,
 		ADD_POST: addPost,
+		EDIT_USER_NAME: editUserNameOption,
 		UNKNOWN: handleUnknown,
 	} as const;
 

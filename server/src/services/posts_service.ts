@@ -34,3 +34,8 @@ export function addPost(post: Post) {
 	post.id = findNextUnusedID(POSTS).toString();
 	POSTS.push(post);
 }
+
+export function editPostTitle(post: Post, newTitle: string) {
+	const postIndex: string = POSTS.findIndex(p => p.id === post.id).toString();
+
+}

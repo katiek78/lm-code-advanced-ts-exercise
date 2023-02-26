@@ -26,7 +26,6 @@ const USERS = [
 
 export function getAllUsers(): User[] {
 	// in the absence of a true Model layer, our service can simply return a hard-coded array of users
-
 	return USERS;
 }
 
@@ -35,3 +34,7 @@ export function addUser(user: User) {
 	USERS.push(user);
 }
 
+export function editUserName(userID: string, newName: string) {
+	const userIndex: number = USERS.findIndex((u) => u.id === userID);
+	USERS[userIndex].name = newName;
+}

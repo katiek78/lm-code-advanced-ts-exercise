@@ -1,7 +1,7 @@
 import * as express from "express";
 import { Express } from "express";
 import { getAllPosts, addPost } from "../services/posts_service";
-import { getAllUsers, addUser } from "../services/users_service";
+import { getAllUsers, addUser, editUserName } from "../services/users_service";
 
 /*
 
@@ -111,6 +111,17 @@ function addAPIRoutes(app: Express) {
 			.send(
 				JSON.stringify(getAllUsers().filter((u) => u.id === req.params.id)[0])
 			);
+	});
+
+	apiRouter.post("/users/edit_user_name/:id", (req, res) => {
+		const { body } = req;
+
+		// Edit username and echo it back in the console
+		editUserName(req.params.id, body.newName);
+		console.log(`👋 Edit username to "${body.newName}"`);
+
+		// reply with a success boolean
+		res.status(200).send({ success: true });
 	});
 
 	console.log("🛠️  Applying API router to Express server...");

@@ -11,6 +11,8 @@ export const STATES = {
 
 	ADD_POST: "ADD_POST",
 
+	EDIT_USER_NAME: "EDIT_USER_NAME",
+
 	UNKNOWN: "UNKNOWN",
 } as const;
 
