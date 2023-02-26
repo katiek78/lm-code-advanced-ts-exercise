@@ -11,7 +11,7 @@ export async function showMenu(): Promise<State> {
 	print("4. Add user", false);
 	printNewLine();
 
-	const result = await prompt("What shall we do? ");
+	const result: string = await prompt("What shall we do? ");
 
 	if (result === "0") return STATES.SEND_MESSAGE;
 	if (result === "1") return STATES.SHOW_POSTS;
